@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fffdf7;
+  --foreground: #7a3030;
+  --heading: #8e3a3a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-heading: var(--heading);
+  --color-cream: #fffdf7;
+  --color-burgundy: #8e3a3a;
+  --color-olive: #a4911b;
+  --color-gold: #c6b48a;
+  --font-sans: var(--font-family-cormorant), Georgia, "Times New Roman", serif;
+  --font-serif: var(--font-family-lora), Georgia, "Times New Roman", serif;
+  --font-newsreader: var(--font-family-newsreader), Georgia, "Times New Roman", serif;
+  --font-infant: var(--font-family-infant), Georgia, "Times New Roman", serif;
+  --font-sacramento: var(--font-sacramento-regular), cursive;
+}
+
+@keyframes menu-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.menu-spin {
+  animation: menu-spin 0.5s linear;
+}
+
+@layer base {
+  html {
+    overflow-anchor: none;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-family-cormorant), Georgia, "Times New Roman", serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--heading);
+    font-family: var(--font-family-lora), Georgia, "Times New Roman", serif;
+  }
+}

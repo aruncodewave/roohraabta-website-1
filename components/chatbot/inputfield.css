@@ -1,0 +1,113 @@
+input[type='date']:in-range::-webkit-datetime-edit-year-field,input[type='date']:in-range::-webkit-datetime-edit-month-field,input[type='date']:in-range::-webkit-datetime-edit-day-field,input[type='date']:in-range::-webkit-datetime-edit-text{ 
+    color: transparent;
+}
+
+/* React DatePicker Custom Styles */
+.react-datepicker-wrapper {
+    width: 100%;
+}
+
+.date-input-container .react-datepicker__input-container input {
+    background: transparent !important;
+    border-radius: 0 !important;
+    padding: 0 0 8px 0 !important;
+    font-size: 20px !important;
+    color: #1d184c !important;
+    width: 100% !important;
+    box-shadow: none !important;
+}
+
+.date-input-container .react-datepicker__input-container input:focus {
+    outline: none !important;
+}
+
+.date-input-container .react-datepicker__input-container input::placeholder {
+    color: transparent !important;
+}
+
+/* DatePicker dropdown styles — scoped so they do not override the membership calendar */
+.chatbot-calendar.react-datepicker {
+    border: 1px solid #651514 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    font-family: var(--font-mulish-regular), sans-serif !important;
+}
+
+.chatbot-calendar .react-datepicker__header {
+    background-color: #f2eae3 !important;
+    border-bottom: 1px solid #651514 !important;
+    border-radius: 8px 8px 0 0 !important;
+}
+
+.chatbot-calendar .react-datepicker__current-month,
+.chatbot-calendar .react-datepicker__day-name {
+    color: #1d184c !important;
+    font-weight: 600 !important;
+}
+
+.chatbot-calendar .react-datepicker__day {
+    color: #1d184c !important;
+}
+
+.chatbot-calendar .react-datepicker__day:hover {
+    background-color: #651514 !important;
+    color: white !important;
+}
+
+.chatbot-calendar .react-datepicker__day--selected {
+    background-color: #651514 !important;
+    color: white !important;
+}
+
+.chatbot-calendar .react-datepicker__day--disabled {
+    color: #ccc !important;
+    cursor: not-allowed !important;
+}
+
+.chatbot-calendar .react-datepicker__year-dropdown,
+.chatbot-calendar .react-datepicker__month-dropdown {
+    background-color: white !important;
+    border: 1px solid #651514 !important;
+    border-radius: 4px !important;
+}
+
+.chatbot-calendar .react-datepicker__year-option:hover,
+.chatbot-calendar .react-datepicker__month-option:hover {
+    background-color: #651514 !important;
+    color: white !important;
+}
+
+/* Remove scrollbars from tel input fields */
+input[type="tel"]::-webkit-outer-spin-button,
+input[type="tel"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="tel"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+input[type="tel"]::-webkit-scrollbar {
+    display: none;
+}
+
+input[type="tel"] {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.custom-select__placeholder{
+    font-size: 18px !important;
+    color: #757575 !important;
+    font-family: var(--font-mulish-regular) !important;
+}
+
+.custom-select__value-container{
+    padding: 0px !important;
+}
+
+.custom-select__control{
+    padding: 0px !important;
+}
