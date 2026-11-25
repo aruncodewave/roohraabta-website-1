@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 const retryClass =
-  "inline-flex aspect-[619/265] w-[min(88vw,420px)] items-center justify-center bg-[url('/images/buttonFrame2.svg')] bg-contain bg-center bg-no-repeat px-[16%] text-center font-serif text-[22px] leading-tight text-[#FFFDF7] transition-opacity hover:opacity-90 md:text-[28px]";
+  "type-footer inline-flex aspect-[619/265] w-[min(88vw,420px)] items-center justify-center bg-[url('/images/buttonFrame2.svg')] bg-contain bg-center bg-no-repeat px-[16%] text-center leading-tight text-[#FFFDF7] transition-opacity hover:opacity-90";
 
 export default function PaymentFailedPage() {
   return (

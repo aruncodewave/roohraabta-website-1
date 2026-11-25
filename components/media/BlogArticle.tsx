@@ -9,13 +9,13 @@ import type { MediaArticle, MediaNeighbor } from "@/lib/media/types";
 const AUTHOR = "Anuradha Gupta";
 
 const articleClass = [
-  "font-serif text-[25px] leading-[1.35] font-normal tracking-[-0.01em] text-[#8B7E2A]",
+  "article-body text-[#8B7E2A]",
   "[&_a]:text-[#8B7E2A] [&_a]:underline",
-  "[&_h2]:mt-12 [&_h2]:mb-4 [&_h2]:text-left [&_h2]:font-sans [&_h2]:text-[40px] [&_h2]:leading-[1.15] [&_h2]:font-semibold [&_h2]:italic [&_h2]:tracking-[-0.01em] [&_h2]:text-[#79211E]",
-  "[&_h3]:mt-12 [&_h3]:mb-4 [&_h3]:text-left [&_h3]:font-sans [&_h3]:text-[40px] [&_h3]:leading-[1.15] [&_h3]:font-semibold [&_h3]:italic [&_h3]:tracking-[-0.01em] [&_h3]:text-[#79211E]",
+  "[&_h2]:mt-12 [&_h2]:mb-4 [&_h2]:text-left [&_h2]:text-[#79211E]",
+  "[&_h3]:mt-12 [&_h3]:mb-4 [&_h3]:text-left [&_h3]:text-[#79211E]",
   "[&_p]:mb-5",
   "[&_p:has(>b:only-child)]:mt-12 [&_p:has(>b:only-child)]:mb-4 [&_p:has(>b:only-child)]:text-left",
-  "[&_p:has(>b:only-child)>b]:font-sans [&_p:has(>b:only-child)>b]:text-[40px] [&_p:has(>b:only-child)>b]:leading-[1.15] [&_p:has(>b:only-child)>b]:font-semibold [&_p:has(>b:only-child)>b]:italic [&_p:has(>b:only-child)>b]:tracking-[-0.01em] [&_p:has(>b:only-child)>b]:text-[#79211E]",
+  "[&_p:has(>b:only-child)>b]:text-[#79211E]",
   "[&_img]:my-8 [&_img]:w-full",
   "[&_li]:mb-2 [&_ol]:my-4 [&_ol]:list-decimal [&_ol]:pl-6 [&_ul]:my-4 [&_ul]:list-disc [&_ul]:pl-6",
 ].join(" ");
@@ -74,10 +74,10 @@ export default function BlogArticle({ article }: { article: MediaArticle }) {
   return (
     <section className="bg-cream pb-16 pt-8 sm:pt-10 lg:pb-20">
       <header className="mx-auto w-full max-w-[1120px] px-5 text-center sm:px-8 lg:px-12">
-        <h1 className="font-sans text-[60px] leading-[1.15] font-bold tracking-[-0.01em] text-[#762323]">
+        <h1 className="type-h2 text-[#762323]">
           {title}
         </h1>
-        <p className="mt-3 font-sans text-[42px] leading-[1.1] font-bold tracking-[-0.02em] text-[#8B7E2A] italic">
+        <p className="type-h4 mt-3 italic text-[#8B7E2A]">
           By {AUTHOR}
         </p>
       </header>

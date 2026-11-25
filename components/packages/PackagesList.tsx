@@ -107,7 +107,7 @@ export default function PackagesList() {
                 className="flex w-full cursor-pointer items-center justify-between gap-4 py-3 text-left"
                 aria-expanded={open}
               >
-                <span className="font-serif text-[22px] uppercase text-[#762323] md:text-[28px]">{pkg.name.trim()}</span>
+                <span className="type-footer uppercase text-[#762323]">{pkg.name.trim()}</span>
                 <svg
                   className={`h-6 w-5 shrink-0 text-[#762323] transition-transform ${open ? "rotate-180" : ""}`}
                   fill="none"
@@ -130,7 +130,7 @@ export default function PackagesList() {
                       onChange={() => setSelectedPackageId(pkg.id)}
                       className="size-5 shrink-0 accent-[#762323]"
                     />
-                    <span className="w-full text-center font-serif text-[18px] uppercase tracking-wide text-[#8B7E2A] md:text-[22px]">
+                    <span className="type-body w-full text-center uppercase tracking-wide text-[#8B7E2A]">
                       {formatPackagePriceDetailed(
                         pkg.membershipFees,
                         userData.country,

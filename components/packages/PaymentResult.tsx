@@ -39,9 +39,9 @@ export function PaymentResult({
       <span className="pointer-events-none absolute top-16 left-0 hidden h-16 w-16 border-t border-l border-[#C6B48A] lg:block" />
       <div className="mx-auto flex max-w-3xl flex-col items-center">
         {tone === "success" ? <SuccessMark /> : <FailureMark />}
-        <h1 className="mt-8 font-serif text-[36px] font-normal text-[#762323] md:text-[52px]">{title}</h1>
+        <h1 className="type-h3 mt-8 text-[#762323]">{title}</h1>
         <span className="mt-6 h-px w-24 bg-[#C6B48A]" />
-        <p className="mt-8 font-serif text-[20px] leading-relaxed text-[#8B7E2A] md:text-[26px] md:leading-10">{message}</p>
+        <p className="type-body-lg mt-8 text-[#8B7E2A]">{message}</p>
         {children ? <div className="mt-10">{children}</div> : null}
       </div>
     </section>

@@ -1,11 +1,9 @@
 import CrossedPaths from "@/components/about/CrossedPaths";
 import TestimonialSection from "@/components/common/TestimonialSection";
 
-const membersHeading =
-  "text-center font-serif text-[28px] font-normal italic leading-[1.25] tracking-[-0.02em] text-[#762323] sm:text-[34px] lg:text-[40px]";
+const membersHeading = "type-h4 text-center italic text-[#762323]";
 
-const membersBody =
-  "text-center font-sans text-[18px] font-semibold leading-[1.4] tracking-[-0.02em] text-[#762323] sm:text-[22px] lg:text-[30px]";
+const membersBody = "type-body-lg text-center text-[#762323]";
 
 const processSteps = [
   {
@@ -45,10 +43,10 @@ export default function AboutPage() {
   return (
     <>
       <section className="bg-[#A4911B] px-5 py-14 text-center text-[#FFFFF0] sm:px-8 sm:py-20">
-        <p className="font-newsreader text-[32px] font-medium leading-none tracking-[-0.01em] text-[#FFFFF0] sm:text-[38px] lg:text-[45px]">
+        <p className="type-h3 text-[#FFFFF0]">
           About Us
         </p>
-        <p className="mx-auto mt-4 max-w-4xl font-sans text-[26px] font-semibold leading-[1.2] tracking-[-0.01em] text-[#FFFFF0] sm:text-[34px] lg:text-[48px]">
+        <p className="type-h3 mx-auto mt-4 max-w-4xl text-[#FFFFF0]">
           We work with people whose lives are full, and who want someone to share them with.
         </p>
       </section>
@@ -90,7 +88,7 @@ export default function AboutPage() {
 
       <section className="bg-cream px-5 py-16 sm:px-8 sm:py-24">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-infant text-[36px] font-bold leading-[1.1] tracking-[-0.02em] text-[#8B7E2A] sm:text-[48px] lg:text-[65px]">
+          <h2 className="type-h2 text-[#8B7E2A]">
             How We Work
           </h2>
         </div>
@@ -107,10 +105,10 @@ export default function AboutPage() {
           <ol className="space-y-12 sm:space-y-16">
             {processSteps.map((step) => (
               <li key={step.title}>
-                <h3 className="font-infant text-[32px] font-bold leading-[1.1] tracking-[-0.02em] text-[#762323] sm:text-[42px] lg:text-[55px]">
+                <h3 className="type-h3 text-[#762323]">
                   {step.title}
                 </h3>
-                <div className="mt-4 space-y-4 font-serif text-[16px] font-normal leading-[1.3] tracking-[-0.02em] text-[#762323] sm:text-[18px] lg:text-[22px]">
+                <div className="type-body mt-4 space-y-4 text-[#762323]">
                   {step.paragraphs.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
@@ -132,7 +130,7 @@ export default function AboutPage() {
       />
 
       <section className="bg-cream px-5 py-16 text-center sm:px-8 sm:py-24">
-        <h2 className="text-center font-sans text-[36px] font-semibold leading-[1.1] tracking-[-0.02em] text-[#762323] sm:text-[52px] lg:text-[75px]">
+        <h2 className="type-h1 text-center text-[#762323]">
           Find what was meant for you
         </h2>
       </section>

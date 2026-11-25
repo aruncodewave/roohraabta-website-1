@@ -34,14 +34,13 @@ function VideoThumb({ video }: { video: MediaPost }) {
           className="aspect-video w-full object-cover"
         />
       ) : (
-        <div className="flex aspect-video items-center justify-center px-4 font-serif text-[16px] text-[#8B7E2A]">
+        <div className="type-body-sm flex aspect-video items-center justify-center px-4 text-[#8B7E2A]">
           Image not available
         </div>
       )}
       {video.duration ? (
         <span
-          className="absolute right-2.5 bottom-2.5 rounded-md bg-black/80 px-2 py-1 text-[13px] leading-none font-medium tracking-wide text-white"
-          style={{ fontFamily: "ui-sans-serif, system-ui, sans-serif" }}
+          className="type-caption absolute right-2.5 bottom-2.5 rounded-md bg-black/80 px-2 py-1 leading-none text-white"
         >
           {video.duration}
         </span>
@@ -62,9 +61,9 @@ function VideoCard({ video }: { video: MediaPost }) {
 
   const copy = (
     <>
-      <h2 className="mt-4 font-sans text-[26px] leading-[1.15] font-bold tracking-[-0.01em] text-[#762323]">{title}</h2>
+      <h2 className="type-footer mt-4 text-[24px] text-[#762323]">{title}</h2>
       {date ? (
-        <time dateTime={video.date} className="mt-3 block font-sans text-[20px] leading-[1.15] font-medium tracking-[-0.01em] text-[#8B7E2A]">
+        <time dateTime={video.date} className="type-label mt-3 block text-[#8B7E2A]">
           {date}
         </time>
       ) : null}
@@ -171,26 +170,26 @@ export default function VideoListing({ initial, unavailable = false }: { initial
   return (
     <MediaFrame>
       <header className="mx-auto mt-8 max-w-4xl text-center sm:mt-10">
-        <h1 className="font-sans text-[65px] leading-[1.2] font-bold tracking-[-0.01em] text-[#762323]">Videos</h1>
-        <p className="mt-4 font-serif text-[30px] leading-[1.35] font-normal tracking-[-0.02em] text-[#8B7E2A]">
+        <h1 className="type-h1 text-[#762323]">Videos</h1>
+        <p className="type-body-lg mt-4 text-[#8B7E2A]">
           Stories, conversations, and perspectives worth watching.
         </p>
       </header>
 
       {items.length > 0 ? (
-        <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-12 sm:mt-12 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-x-4 gap-y-12 sm:mt-12 md:grid-cols-2 lg:grid-cols-3">
           {items.slice(0, visible).map((video) => (
             <VideoCard key={video.id} video={video} />
           ))}
         </div>
       ) : (
-        <p className="mt-12 text-center font-serif text-[18px] text-[#762323]">
+        <p className="type-body-sm mt-12 text-center text-[#762323]">
           {failed ? "Videos are unavailable right now." : "No videos yet."}
         </p>
       )}
 
       {failed && items.length > 0 ? (
-        <p className="mt-8 text-center font-serif text-[16px] text-[#762323]">More videos could not be loaded.</p>
+        <p className="type-detail mt-8 text-center text-[#762323]">More videos could not be loaded.</p>
       ) : null}
 
       {hasMore ? (
@@ -199,7 +198,7 @@ export default function VideoListing({ initial, unavailable = false }: { initial
             type="button"
             onClick={viewMore}
             disabled={loading}
-            className="cursor-pointer rounded-full bg-[#A4911B] px-12 py-3 font-sans text-[45px] leading-[1.2] font-bold tracking-[-0.03em] text-white transition-opacity hover:opacity-90 disabled:cursor-wait disabled:opacity-70"
+            className="type-h4 cursor-pointer rounded-full bg-[#A4911B] px-12 py-3 text-white transition-opacity hover:opacity-90 disabled:cursor-wait disabled:opacity-70"
           >
             {loading ? "Loading…" : "View More"}
           </button>

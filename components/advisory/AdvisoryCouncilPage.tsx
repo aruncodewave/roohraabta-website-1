@@ -69,10 +69,10 @@ export default function AdvisoryCouncilPage() {
   return (
     <>
       <section className="bg-[#A4911B] px-5 py-12 text-center text-[#FFFFF0] sm:px-8 sm:py-16">
-        <h1 className="font-sans text-[40px] font-bold leading-none tracking-[-0.01em] text-[#FFFFF0] sm:text-[60px]">
+        <h1 className="type-h2 text-[#FFFFF0]">
           The Advisory Council
         </h1>
-        <div className="mx-auto mt-6 max-w-5xl space-y-4 text-center font-serif text-[18px] font-normal leading-[1.4] tracking-[-0.01em] sm:text-[28px]">
+        <div className="type-body-lg mx-auto mt-6 max-w-5xl space-y-4 text-center">
           {councilIntro.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
@@ -118,7 +118,7 @@ export default function AdvisoryCouncilPage() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: reduceMotion ? 0 : 0.35, delay: reduceMotion ? 0 : 0.4 }}
-                  className="pointer-events-none absolute top-1/2 right-0 z-20 hidden -translate-y-1/2 pr-2 font-infant text-[40px] font-bold leading-[1.1] tracking-[-0.01em] text-[#762323] sm:left-[calc(13%+1rem+40%+1rem)] sm:block lg:text-[55px] xl:left-[calc(13%+1rem+513px+1rem)]"
+                  className="type-h3 pointer-events-none absolute top-1/2 right-0 z-20 hidden -translate-y-1/2 pr-2 text-[#762323] sm:left-[calc(13%+1rem+40%+1rem)] sm:block xl:left-[calc(13%+1rem+513px+1rem)]"
                 >
                   {member.name}
                 </motion.p>
@@ -129,7 +129,7 @@ export default function AdvisoryCouncilPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: reduceMotion ? 0 : 0.35 }}
-              className="mt-6 text-center font-infant text-[32px] font-bold leading-[1.1] tracking-[-0.01em] text-[#762323] sm:hidden"
+              className="type-h3 mt-6 text-center text-[#762323] sm:hidden"
             >
               {member.name}
             </motion.p>
@@ -137,7 +137,7 @@ export default function AdvisoryCouncilPage() {
         </div>
 
         <div className="mx-auto mt-8 max-w-5xl px-5 text-left sm:mt-12" aria-live={fromUser ? "polite" : "off"}>
-          <div className="space-y-5 font-serif text-[18px] font-medium leading-[1.5] tracking-[-0.01em] text-[#762323] sm:text-[25px]">
+          <div className="type-body space-y-5 text-[#762323]">
             {member.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}

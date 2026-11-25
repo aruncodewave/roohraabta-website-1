@@ -100,7 +100,7 @@ function MenuRow({
         className={`grid transition-[grid-template-rows] duration-300 ${expanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
       >
         <ul
-          className={`mt-4 space-y-3 overflow-hidden text-center font-serif text-[0.75em] font-normal italic leading-none tracking-[-0.01em] ${expanded ? "" : "hidden"}`}
+          className={`type-body font-sans mt-1 space-y-1 overflow-hidden text-center text-[30px] italic leading-tight ${expanded ? "" : "hidden"}`}
         >
           {item.children.map((child) => (
             <li key={child.href} className="w-full">
@@ -160,8 +160,8 @@ export default function Sidebar({ open, onClose, onExited }: SidebarProps) {
           <path strokeLinecap="round" d="M6 6l12 12M18 6L6 18" />
         </svg>
       </button>
-      <div className="mt-[60px] flex min-h-0 flex-1 flex-col justify-between px-6 pb-10 text-center font-newsreader text-[clamp(1.5rem,2.6vw,2rem)] font-medium leading-none tracking-[-0.01em] text-white sm:px-8 lg:mt-[130px]">
-          <ul className="flex w-full flex-col items-center gap-6 overflow-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden pt-[30px] md:pt-[50px] lg:pt-0 sm:gap-8">
+      <div className="type-footer font-sans text-[40px] font-semibold mt-[60px] flex min-h-0 flex-1 flex-col justify-between px-6 pb-10 text-center text-white sm:px-8 lg:mt-[130px]">
+          <ul className="flex w-full flex-col items-center gap-6 overflow-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden pt-[30px] md:pt-[50px] lg:pt-0">
             {primaryNav.map((item) => (
               <MenuRow
                 key={item.id}

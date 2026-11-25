@@ -212,7 +212,7 @@ function PathTile({
                     >
                       {tile.kind === "card" ? (
                         <div
-                          className="flex h-full items-center justify-center whitespace-pre-line px-6 text-center font-serif text-[22px] font-normal italic leading-[1.25] tracking-[-0.02em] text-[#FFFFF0] sm:text-[26px] lg:text-[28px]"
+                          className="type-footer flex h-full items-center justify-center whitespace-pre-line px-6 text-center italic text-[#FFFFF0]"
                           style={{ backgroundColor: tile.backgroundColor }}
                         >
                           {tile.text}
@@ -239,16 +239,16 @@ function PathTile({
                       }}
                     >
                       <div className={`flex min-h-full flex-col justify-start ${spacious ? "px-6 py-5 sm:px-8 lg:px-10" : "px-4 py-3 sm:px-5 lg:px-6"}`}>
-                      <p className="font-serif text-[30px] font-medium italic leading-[1.25] tracking-[-0.02em]">
+                      <p className="type-footer italic">
                         {tile.back.title}
                       </p>
                       {tile.back.body ? (
-                        <p className="mt-3 whitespace-pre-line font-serif text-[16px] font-normal leading-[1.4] tracking-normal">
+                        <p className="type-body-sm mt-3 whitespace-pre-line">
                           {tile.back.body}
                         </p>
                       ) : null}
                       {tile.back.credit ? (
-                        <p className="mt-4 font-serif text-[20px] font-semibold leading-[1.25] tracking-[-0.02em]">
+                        <p className="type-label mt-4">
                           {tile.back.credit}
                         </p>
                       ) : null}

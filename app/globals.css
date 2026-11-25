@@ -42,7 +42,8 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
-    font-family: var(--font-family-cormorant), Georgia, "Times New Roman", serif;
+    font-family: var(--font-family-lora), Georgia, "Times New Roman", serif;
+    font-weight: 400;
   }
 
   h1,
@@ -52,6 +53,238 @@
   h5,
   h6 {
     color: var(--heading);
+    font-family: var(--font-family-cormorant), Georgia, "Times New Roman", serif;
+  }
+}
+
+/* Desktop core scale. CG = Cormorant Garamond, L = Lora.
+   Sizes below lg step down so the same roles stay usable on smaller screens. */
+@layer components {
+  .type-display,
+  .type-hero,
+  .type-h1,
+  .type-h2,
+  .type-h3,
+  .type-h4,
+  .type-footer {
+    font-family: var(--font-family-cormorant), Georgia, "Times New Roman", serif;
+    letter-spacing: -0.02em;
+  }
+
+  .type-body-lg,
+  .type-body,
+  .type-body-sm,
+  .type-label,
+  .type-caption,
+  .type-detail {
     font-family: var(--font-family-lora), Georgia, "Times New Roman", serif;
+    letter-spacing: -0.01em;
+  }
+
+  .type-display {
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 0.95;
+  }
+
+  .type-hero {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.05;
+  }
+
+  .type-h1 {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1.1;
+  }
+
+  .type-h2 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.1;
+  }
+
+  .type-h3 {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  .type-h4 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.15;
+  }
+
+  .type-footer {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  .type-body-lg {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.45;
+  }
+
+  .type-body {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .type-body-sm {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .type-label {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  .type-caption {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .type-detail {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .article-body {
+    font-family: var(--font-family-lora), Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+  }
+
+  .article-body :is(h2, h3),
+  .article-body p:has(> b:only-child) > b {
+    font-family: var(--font-family-cormorant), Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 24px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  @media (min-width: 640px) {
+    .type-display { font-size: 104px; }
+    .type-hero { font-size: 56px; }
+    .type-h1 { font-size: 52px; }
+    .type-h2 { font-size: 44px; }
+    .type-h3 { font-size: 36px; }
+    .type-h4 { font-size: 32px; }
+    .type-footer { font-size: 26px; }
+    .type-body-lg { font-size: 20px; }
+    .type-body { font-size: 18px; }
+    .type-label { font-size: 18px; }
+    .type-detail { font-size: 15px; }
+    .article-body { font-size: 20px; }
+    .article-body :is(h2, h3),
+    .article-body p:has(> b:only-child) > b { font-size: 32px; }
+  }
+
+  @media (min-width: 1024px) {
+    .type-display { font-size: 140px; }
+    .type-hero { font-size: 80px; }
+    .type-h1 { font-size: 70px; }
+    .type-h2 { font-size: 60px; }
+    .type-h3 { font-size: 50px; }
+    .type-h4 { font-size: 40px; }
+    .type-footer { font-size: 30px; }
+    .type-body-lg { font-size: 24px; }
+    .type-body { font-size: 22px; }
+    .type-body-sm { font-size: 18px; }
+    .type-label { font-size: 20px; }
+    .type-caption { font-size: 14px; }
+    .type-detail { font-size: 15px; }
+    .article-body { font-size: 24px; }
+    .article-body :is(h2, h3),
+    .article-body p:has(> b:only-child) > b { font-size: 40px; }
+  }
+}
+
+/* Questionnaire scale, separate from the page scale. All Lora.
+   Full sizes from 1280px, near the 1728px specimen width. */
+@layer components {
+  .form-section,
+  .form-subsection,
+  .form-question,
+  .form-field,
+  .form-field-float,
+  .form-hint,
+  .form-note,
+  .form-intro,
+  .form-step {
+    font-family: var(--font-family-lora), Georgia, "Times New Roman", serif;
+    letter-spacing: -0.01em;
+  }
+
+  .form-section,
+  .form-subsection,
+  .form-question,
+  .form-field,
+  .form-field-float,
+  .form-step {
+    font-weight: 600;
+  }
+
+  .form-hint,
+  .form-note {
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .form-intro {
+    font-weight: 400;
+  }
+
+  .form-step {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .form-section { font-size: 34px; line-height: 1.15; }
+  .form-subsection { font-size: 26px; line-height: 1.2; }
+  .form-question { font-size: 22px; line-height: 1.3; }
+  .form-field,
+  .form-hint,
+  .form-intro { font-size: 20px; line-height: 1.3; }
+  .form-note { font-size: 18px; line-height: 1.4; }
+  .form-step { font-size: 22px; line-height: 1.2; }
+  .form-field-float { font-size: 16px; line-height: 1.2; }
+
+  @media (min-width: 640px) {
+    .form-section { font-size: 46px; }
+    .form-subsection { font-size: 34px; }
+    .form-question { font-size: 28px; }
+    .form-field,
+    .form-hint,
+    .form-intro { font-size: 26px; }
+    .form-note { font-size: 22px; }
+    .form-step { font-size: 30px; }
+    .form-field-float { font-size: 18px; }
+  }
+
+  @media (min-width: 1280px) {
+    .form-section { font-size: 60px; }
+    .form-subsection { font-size: 45px; }
+    .form-question { font-size: 37px; }
+    .form-field,
+    .form-hint { font-size: 35px; }
+    .form-note { font-size: 30px; }
+    .form-intro { font-size: 35px; }
+    .form-step { font-size: 40px; }
+    .form-field-float { font-size: 20px; }
   }
 }

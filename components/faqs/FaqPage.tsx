@@ -80,7 +80,7 @@ export default function FaqPage() {
 
       <section className="bg-cream px-4 py-10 sm:px-8 sm:py-16 lg:px-12 lg:py-20">
         <div className="mx-auto flex w-full max-w-[1180px] flex-col gap-6 sm:gap-8 lg:flex-row lg:items-start lg:gap-10 xl:gap-16">
-          <h1 className="shrink-0 font-sans text-[clamp(36px,8vw,76px)] font-medium leading-none tracking-[-0.02em] text-[#762323] lg:w-[230px] lg:pt-4">
+          <h1 className="type-h1 shrink-0 text-[70px] text-[#762323] lg:pt-4">
             FAQ&apos;s
           </h1>
 
@@ -107,7 +107,7 @@ export default function FaqPage() {
                       }}
                       className="relative flex w-full cursor-pointer items-center justify-start px-11 py-4 text-left sm:px-16 sm:py-6 lg:px-20 lg:py-7"
                     >
-                      <span className="block w-full min-w-0 font-newsreader text-[clamp(18px,4.2vw,46px)] font-medium leading-[1.15] tracking-[-0.02em] text-[#762323]">
+                      <span className="type-h4 block w-full min-w-0 text-[40px] text-[#762323]">
                         {section.title}
                       </span>
                       <span className="absolute right-3 top-1/2 h-4 w-7 -translate-y-1/2 sm:right-6 sm:h-[22px] sm:w-[38px] lg:right-8 lg:h-[26px] lg:w-[45px]">
@@ -152,10 +152,10 @@ export default function FaqPage() {
                               aria-hidden="true"
                             />
                             <div className="min-w-0">
-                              <h3 className="font-infant text-[clamp(18px,3.2vw,36px)] font-bold leading-[1.15] tracking-[-0.02em] text-[#8B7E2A]">
+                              <h3 className="type-h4 text-[40px] text-[#8B7E2A]">
                                 {item.question}
                               </h3>
-                              <div className="mt-3 space-y-3 font-serif text-[clamp(15px,1.8vw,20px)] font-normal leading-[1.5] tracking-[-0.02em] text-[#762323] sm:mt-4 sm:space-y-4">
+                              <div className="type-body mt-3 space-y-3 text-[22px] text-[#762323] sm:mt-4 sm:space-y-4">
                                 {item.paragraphs.map((paragraph) => (
                                   <p key={paragraph}>{paragraph}</p>
                                 ))}

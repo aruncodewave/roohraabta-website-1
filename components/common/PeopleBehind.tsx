@@ -337,7 +337,7 @@ export default function PeopleBehind({
                   transition={{ duration: 0.45, ease: "easeOut" }}
                   className="min-w-0 text-left"
                 >
-                  <h1 className="font-sans text-[48px] font-bold leading-none tracking-[-0.01em] text-[#8B7E2A] sm:text-[64px] lg:text-[80px]">
+                  <h1 className="type-hero text-[#8B7E2A]">
                     <span ref={firstNameRef} className="inline-block max-w-full">
                       {nameParts.first}
                       {nameParts.last ? (
@@ -349,11 +349,11 @@ export default function PeopleBehind({
                   </h1>
                   <div className="min-w-0 text-left" style={{ paddingLeft: textIndent }}>
                     <p className="mt-4">
-                      <span className="inline-block border-b border-[#762323] pb-1 font-sans text-[22px] font-bold italic leading-[1.1] tracking-[-0.02em] text-[#762323] sm:text-[28px] lg:text-[33px]">
+                      <span className="type-footer inline-block border-b border-[#762323] pb-1 italic text-[#762323]">
                         {member.title}
                       </span>
                     </p>
-                    <div className="mt-7 space-y-5 font-serif text-[18px] font-normal leading-[1.5] tracking-[-0.01em] text-[#762323] sm:text-[21px] lg:text-[24px]">
+                    <div className="type-body-lg mt-7 space-y-5 text-[#762323]">
                       {member.paragraphs.map((paragraph) => (
                         <p key={paragraph}>{paragraph}</p>
                       ))}
@@ -366,7 +366,7 @@ export default function PeopleBehind({
                               href={link.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="font-sans text-[16px] font-semibold text-[#8B7E2A] underline underline-offset-4 hover:opacity-70 sm:text-[18px]"
+                              className="type-body-sm text-[#8B7E2A] underline underline-offset-4 hover:opacity-70"
                             >
                               {link.label}
                             </a>
@@ -409,11 +409,11 @@ export default function PeopleBehind({
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <h2
           id={headingId}
-          className={`text-center font-sans text-[36px] font-bold leading-[1.2] tracking-[-0.01em] text-[#762323] sm:text-[48px] lg:text-[65px] ${isMemberPage ? "mt-16 sm:mt-20 lg:mt-24" : ""}`}
+          className={`type-h2 text-center text-[#762323] ${isMemberPage ? "mt-16 sm:mt-20 lg:mt-24" : ""}`}
         >
           {heading}
         </h2>
-        <p className="mx-auto mt-4 max-w-4xl text-center font-serif text-[18px] font-medium leading-[1.2] tracking-[-0.02em] text-[#8B7E2A] sm:text-[24px] lg:text-[30px]">
+        <p className="type-body-lg mx-auto mt-4 max-w-4xl text-center text-[#8B7E2A]">
           {subtitle}
         </p>
       </div>
@@ -455,10 +455,10 @@ export default function PeopleBehind({
                   }`}
                 >
                   <span className="block px-2 pb-4 pt-5 sm:px-3 sm:pb-5 sm:pt-7">
-                    <span className="block font-sans text-[22px] font-bold leading-[1.15] tracking-[-0.01em] text-[#762323] sm:text-[43px]">
+                    <span className="type-h4 block text-[#762323]">
                       {person.name}
                     </span>
-                    <span className="mt-1.5 block font-serif text-[14px] font-medium leading-[1.2] tracking-normal text-[#8B7E2A] sm:text-[20px]">
+                    <span className="type-label mt-1.5 block text-[#8B7E2A]">
                       {person.role}
                     </span>
                   </span>

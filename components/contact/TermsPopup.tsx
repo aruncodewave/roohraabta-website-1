@@ -395,14 +395,14 @@ function TermsCopy() {
     <>
       {sections.map((section) => (
         <section key={section.title} className="mb-8">
-          <h3 className="font-sans text-[20px] font-medium uppercase text-[#762323] sm:text-[22px]">{section.title}</h3>
+          <h3 className="type-footer uppercase text-[#762323]">{section.title}</h3>
           {section.blocks.map((block) => (
             <div key={block.subheading ?? block.paragraphs[0]?.[0]?.toString()} className="mt-3">
               {block.subheading ? (
-                <h4 className="font-sans text-[18px] font-medium text-[#762323] sm:text-[20px]">{block.subheading}</h4>
+                <h4 className="type-label text-[#762323]">{block.subheading}</h4>
               ) : null}
               {block.paragraphs.map((paragraph, index) => (
-                <p key={index} className="mt-2 font-sans text-[18px] leading-relaxed text-[#762323] sm:text-[20px]">
+                <p key={index} className="type-body-sm mt-2 text-[#762323]">
                   {paragraph.map((part, partIndex) => renderPart(part, partIndex))}
                 </p>
               ))}
@@ -410,7 +410,7 @@ function TermsCopy() {
           ))}
         </section>
       ))}
-      <p className="text-right font-sans text-[18px] text-[#762323]">Last Revised: 12 January 2026</p>
+      <p className="type-detail text-right text-[#762323]">Last Revised: 12 January 2026</p>
     </>
   );
 }
@@ -449,7 +449,7 @@ export default function TermsPopup({ open, onClose, onAgree }: TermsPopupProps) 
       <button type="button" className="absolute inset-0 cursor-default" aria-label="Close terms" onClick={onClose} />
       <div className="relative flex max-h-[90vh] w-full max-w-3xl flex-col bg-cream shadow-lg">
         <div className="px-8 pt-8 pb-4 sm:px-12">
-          <h2 id="terms-title" className="font-serif text-[36px] text-[#762323] sm:text-[42px]">
+          <h2 id="terms-title" className="type-h4 text-[#762323]">
             Terms & Conditions
           </h2>
           <div className="mt-4 h-px w-40 bg-[#762323]" />
@@ -465,12 +465,12 @@ export default function TermsPopup({ open, onClose, onAgree }: TermsPopupProps) 
         </div>
         <div className="flex flex-col items-end gap-3 px-8 py-6 sm:px-12">
           {showHint ? (
-            <p className="font-sans text-[18px] text-[#762323]">Please scroll to the bottom to read all terms and conditions</p>
+            <p className="type-body-sm text-[#762323]">Please scroll to the bottom to read all terms and conditions</p>
           ) : null}
           <button
             type="button"
             onClick={agree}
-            className="cursor-pointer border border-[#8B7E2A] px-8 py-2 font-sans text-[20px] text-[#762323]"
+            className="type-label cursor-pointer border border-[#8B7E2A] px-8 py-2 text-[#762323]"
           >
             I Agree
           </button>

@@ -15,10 +15,9 @@ type BeginJourneyButtonProps = {
 };
 
 const frameClass =
-  "inline-flex aspect-[811/329] cursor-pointer items-center justify-center whitespace-nowrap border-0 bg-transparent bg-[url('/images/buttonFrame.svg')] bg-contain bg-center bg-no-repeat text-center font-sans font-bold leading-none tracking-[-0.04em] text-[#79211E] transition-opacity hover:opacity-90";
+  "type-h4 inline-flex aspect-[811/329] cursor-pointer items-center justify-center whitespace-nowrap border-0 bg-transparent bg-[url('/images/buttonFrame.svg')] bg-contain bg-center bg-no-repeat text-center leading-none text-[#79211E] transition-opacity hover:opacity-90";
 
-const sentenceClass =
-  "max-w-6xl text-center font-sans font-bold leading-[1.25] tracking-[-0.02em] text-[#FFFFF0]";
+const sentenceClass = "type-h3 max-w-6xl text-center text-[#FFFFF0]";
 
 export default function BeginJourneyButton({
   text = "We make the introduction. You write what comes next.",
@@ -28,10 +27,10 @@ export default function BeginJourneyButton({
   href,
   id,
   className = "",
-  buttonTextClass = "text-[clamp(2rem,8.2vw,50px)]",
+  buttonTextClass = "",
   buttonWidthClass = "w-[min(96vw,600px)]",
   buttonPaddingClass = "px-[18%]",
-  sentenceTextClass = "text-[28px] sm:text-[36px] lg:text-[50px]",
+  sentenceTextClass = "",
 }: BeginJourneyButtonProps) {
   const copy = lines?.length ? lines : text ? [text] : [];
   const controlClass = `${frameClass} ${buttonWidthClass} ${buttonPaddingClass} ${buttonTextClass}`;

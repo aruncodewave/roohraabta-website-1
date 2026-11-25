@@ -10,8 +10,8 @@ const socialIcons: Record<string, string> = {
   LinkedIn: "/logo/linkedin.svg",
 };
 
-const columnTitle = "whitespace-nowrap text-center font-serif text-[20px] font-normal leading-none text-[#762323] lg:text-[24px]";
-const columnText = "text-center font-serif text-[15px] font-normal leading-[1.45] text-[#762323] lg:text-[18px]";
+const columnTitle = "type-footer whitespace-nowrap text-center text-[#762323]";
+const columnText = "type-body-sm text-center text-[#762323]";
 
 function ServiceChevron({ open }: { open: boolean }) {
   return (
@@ -75,7 +75,7 @@ function ServiceItem({
           {open ? (
             <ul
               id={panelId}
-              className="absolute top-1/2 left-0 z-[10000] min-w-[148px] rounded-lg bg-[#E6D9BE] py-2.5 pr-4 pl-6 text-left font-serif text-[14px] leading-[1.5] text-[#762323] lg:text-[15px]"
+              className="type-detail absolute top-1/2 left-0 z-[10000] min-w-[148px] rounded-lg bg-[#E6D9BE] py-2.5 pr-4 pl-6 text-left text-[#762323]"
             >
               {service.cities.map((city) => (
                 <li key={city.href} className="list-disc">
@@ -155,7 +155,7 @@ export default function Footer() {
             </p>
             <a
               href={footerNav.whatsapp.href}
-              className="whitespace-nowrap text-center font-serif text-[15px] leading-none text-[#8B7E2A] underline decoration-solid underline-offset-4 hover:opacity-70 lg:text-[18px]"
+              className="type-body-sm whitespace-nowrap text-center leading-none text-[#8B7E2A] underline decoration-solid underline-offset-4 hover:opacity-70"
             >
               {footerNav.whatsapp.label}
             </a>

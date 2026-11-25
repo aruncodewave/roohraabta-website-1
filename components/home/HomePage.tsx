@@ -2,12 +2,10 @@ import BeginJourneyButton from "@/components/common/BeginJourneyButton";
 import TestimonialSection from "@/components/common/TestimonialSection";
 import HeroVideo from "@/components/home/HeroVideo";
 
-const storyHeading =
-  "text-center font-serif text-[36px] font-normal italic leading-[1.25] tracking-[-0.02em]";
-const storySubtitle =
-  "text-center font-sans text-[24px] font-bold leading-[1.4] tracking-[-0.02em]";
-const storyBody =
-  "text-center font-sans text-[18px] font-bold leading-[1.4] tracking-normal";
+const storyTitle = "type-h1 text-center";
+const storyLead = "type-body-lg text-center";
+const storyBody = "type-body-lg text-center";
+const storyStatement = "type-h2 text-center";
 
 export default function HomePage() {
   return (
@@ -15,10 +13,10 @@ export default function HomePage() {
       <section className="relative w-full overflow-hidden bg-burgundy">
         <HeroVideo />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/40 to-transparent px-4 pb-5 pt-16 text-center text-white sm:px-8 sm:pb-8 md:pb-12">
-          <p className="font-infant text-[36px] italic leading-tight">
+          <p className="type-h3 italic">
             “What you seek is seeking you.”
           </p>
-          <p className="mt-2 font-infant text-[24px] italic">
+          <p className="type-body mt-2 italic">
             -Rumi
           </p>
         </div>
@@ -26,8 +24,8 @@ export default function HomePage() {
 
       <section className="bg-cream px-5 py-12 text-center sm:px-8 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-5xl">
-          <h1 className={`${storyHeading} text-[#762323]`}>Home is a person.</h1>
-          <p className={`mt-8 ${storySubtitle} text-[#762323]`}>Since 2012. Thousands of stories.</p>
+          <h1 className={`${storyTitle} text-[#762323]`}>Home is a person.</h1>
+          <p className={`mt-8 ${storyLead} text-[#762323]`}>Since 2012. Thousands of stories.</p>
           <div className={`mt-8 space-y-8 ${storyBody} text-[#762323]`}>
             <p>
               Across countries, cultures and continents, people have trusted Vows
@@ -45,7 +43,7 @@ export default function HomePage() {
 
       <section className="bg-[#A4911B] px-5 py-12 text-center sm:px-8 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-5xl">
-          <h2 className={`${storyHeading} text-[#FFFFF0]`}>
+          <h2 className={`${storyStatement} text-[#FFFFF0]`}>
             More than a decade of matchmaking has taught us to begin with the person, not the profile.
           </h2>
           <div className={`mt-8 space-y-8 ${storyBody} text-[#FFFFF0]`}>
@@ -74,9 +72,8 @@ export default function HomePage() {
         backgroundColor="#FFFDF7"
         textColor="#762323"
         bodyAlign="left"
-        titleSizeClass="text-[36px]"
-        bodySizeClass="text-[18px]"
-        creditSizeClass="text-[24px]"
+        bodySizeClass="type-body-lg"
+        creditSizeClass="type-label"
         paragraph={`“I’m in my third year of residency. I work 70 hour weeks and eat most meals standing up. I love what I do, but it doesn’t leave much room for dating.
 
 I was tired of apologising for my life.
@@ -95,10 +92,6 @@ It’s not glamorous. But it’s the first relationship where I’ve never felt 
         id="begin"
         href="/contact"
         buttonName="Start a Conversation"
-        buttonTextClass="text-[14px]"
-        buttonWidthClass="w-[min(64vw,200px)]"
-        buttonPaddingClass="px-[10%]"
-        sentenceTextClass="text-[36px]"
         text="We make the introduction. You write what comes next."
       />
     </>

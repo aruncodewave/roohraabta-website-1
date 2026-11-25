@@ -144,7 +144,7 @@ export default function PackageCheckout() {
       <PackageHeading />
 
       <div className="mx-auto mt-12 w-full max-w-[715px]">
-        <div className="bg-[#F3EAD6] px-4 py-4 text-center font-serif text-[18px] uppercase tracking-wide text-[#762323] md:text-[22px]">
+        <div className="type-body bg-[#F3EAD6] px-4 py-4 text-center uppercase tracking-wide text-[#762323]">
           {selectedPackage.name} {price}
         </div>
 
@@ -154,12 +154,12 @@ export default function PackageCheckout() {
       </div>
 
       <div className="mx-auto mt-16 max-w-[715px] text-center">
-        <h2 className="font-serif text-[22px] tracking-wide text-[#762323] md:text-[28px]">Grand Total</h2>
-        <p className="mt-4 font-serif text-[18px] uppercase leading-9 text-[#8B7E2A] md:text-[22px]">{price}</p>
+        <h2 className="type-footer tracking-wide text-[#762323]">Grand Total</h2>
+        <p className="type-body mt-4 uppercase text-[#8B7E2A]">{price}</p>
 
         <div className="mt-8 mb-6 flex flex-col items-center">
           {requiresAgreementSignature ? (
-            <p className="mb-4 font-serif text-[18px] text-[#762323] md:text-[20px]">
+            <p className="type-label mb-4 text-[#762323]">
               Please sign the agreement before proceeding to payment.
             </p>
           ) : null}

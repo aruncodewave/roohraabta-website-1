@@ -142,7 +142,7 @@ export default function ExploratoryForm({ countryCodes, dropdowns }: Exploratory
       className="mx-auto flex max-w-4xl flex-col gap-12"
       noValidate
     >
-      <h2 className="text-center font-serif text-[34px] font-normal text-[#762323] md:text-[48px]">
+      <h2 className="form-section text-center text-[#762323]">
         <span className="inline-block border-b border-[#762323] pb-2">Schedule an Exploratory Call</span>
       </h2>
       <ChoiceField

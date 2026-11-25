@@ -76,7 +76,7 @@ export default function Header() {
           <div className="@container min-w-0 flex-1">
             <Link
               href="/contact"
-              className="inline-block max-w-full py-1 text-center font-sans text-[clamp(16px,14.2cqw,40px)] font-bold leading-[1.3] tracking-[-0.04em] whitespace-nowrap text-[#762323] hover:opacity-70"
+              className="inline-block max-w-full py-1 text-center font-sans text-[clamp(16px,14.2cqw,40px)] font-bold leading-[1.15] tracking-[-0.02em] whitespace-nowrap text-[#762323] hover:opacity-70"
             >
               Begin Your Journey
             </Link>

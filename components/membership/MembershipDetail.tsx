@@ -61,14 +61,14 @@ export default function MembershipDetail({ page, category, currency: fallbackCur
 
       <section className="bg-cream px-5 py-14 text-center sm:px-8 sm:py-20">
         <div className="mx-auto max-w-5xl">
-          <h2 className="font-sans text-[40px] font-semibold leading-[1.1] tracking-[-0.02em] text-[#762323] sm:text-[52px] lg:text-[70px]">
+          <h2 className="type-h2 text-[60px] text-[#762323]">
             {page.sectionTitle}
           </h2>
-          <p className="mt-3 font-serif text-[24px] font-medium italic leading-[1.1] text-[#762323] sm:text-[30px] lg:text-[36px]">
+          <p className="type-h4 mt-3 italic text-[#762323]">
             {page.sectionSubtitle}
           </p>
           {page.sectionParagraphs.length ? (
-            <div className="mt-8 space-y-5 font-serif text-[18px] font-normal leading-[1.6] tracking-[-0.02em] text-[#7a3030] lg:text-[24px]">
+            <div className="type-body-lg mt-8 space-y-5 text-[#7a3030]">
               {page.sectionParagraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -78,11 +78,11 @@ export default function MembershipDetail({ page, category, currency: fallbackCur
       </section>
 
       {packages === null || (packages.length > 0 && currency === null) ? (
-        <p className="bg-cream px-5 pb-16 text-center font-serif text-[18px] text-[#762323]">Loading memberships…</p>
+        <p className="type-body-sm bg-cream px-5 pb-16 text-center text-[#762323]">Loading memberships…</p>
       ) : packages.length && currency ? (
         packages.map((item) => <PackageBlock key={item.id} item={item} currency={currency} />)
       ) : (
-        <p className="bg-cream px-5 pb-16 text-center font-serif text-[18px] text-[#762323]">
+        <p className="type-body-sm bg-cream px-5 pb-16 text-center text-[#762323]">
           Membership details are being updated. Please check back shortly.
         </p>
       )}
@@ -158,16 +158,16 @@ function PackageBlock({ item, currency }: { item: PackageWebsiteContent; currenc
   return (
     <section id={packageSlug(item.packageName)} className="bg-cream px-5 py-8 text-center sm:px-8 sm:py-12">
       <div className="mx-auto max-w-5xl">
-        <h3 className="font-sans text-[40px] font-semibold leading-[1.1] tracking-[-0.02em] text-[#762323] sm:text-[52px] lg:text-[70px]">
+        <h3 className="type-h3 text-[50px] text-[#762323]">
           {item.packageName}
         </h3>
         {item.subheading ? (
-          <p className="mt-3 font-serif text-[24px] font-medium italic leading-[1.1] text-[#762323] sm:text-[30px] lg:text-[36px]">
+          <p className="type-h4 mt-3 italic text-[#762323]">
             {item.subheading}
           </p>
         ) : null}
         {item.contentLines.length ? (
-          <div className="mt-6 space-y-5 font-serif text-[18px] font-normal leading-[1.6] tracking-[-0.02em] text-[#7a3030] lg:text-[24px]">
+          <div className="type-body-lg mt-6 space-y-5 text-[#7a3030]">
             {item.contentLines.map((line) => {
               const emphasis = /^(eligibility|reserved)\b/i.test(line);
               return (
@@ -182,14 +182,14 @@ function PackageBlock({ item, currency }: { item: PackageWebsiteContent; currenc
 
       {item.experienceLines.length ? (
         <div className="mx-auto mt-12 max-w-5xl">
-          <h4 className="font-serif text-[24px] font-medium italic leading-[1.1] text-[#762323] sm:text-[30px] lg:text-[36px]">
+          <h4 className="type-h4 italic text-[#762323]">
             The Experience
           </h4>
           <ul className="mt-8 flex flex-wrap justify-center gap-y-10">
             {item.experienceLines.map((line, index) => (
               <li key={line} className={`w-full px-4 sm:w-1/2 ${experienceWidth}`}>
                 <ExperienceIcon index={index} />
-                <p className="mx-auto mt-3 max-w-[220px] font-serif text-[15px] font-normal leading-[1.35] tracking-[0.02em] text-[#7a3030]">
+                <p className="type-detail mx-auto mt-3 max-w-[220px] text-[#7a3030]">
                   {line}
                 </p>
               </li>
@@ -200,19 +200,22 @@ function PackageBlock({ item, currency }: { item: PackageWebsiteContent; currenc
 
       {highlight.length ? (
         <dl className="mx-auto mt-12 flex max-w-6xl flex-wrap items-start justify-center gap-x-16 gap-y-8">
-          {highlight.map((entry) => (
-            <div key={entry.key} className="min-w-36 text-center text-[#8B7E2A]">
-              <dt className="font-infant text-[28px] font-semibold leading-[1.1] tracking-[-0.03em] lg:text-[40px]">{entry.key}</dt>
-              <dd className="mt-1 font-serif text-[36px] font-medium leading-[1.1] tracking-[-0.03em] lg:text-[50px]">
-                {entry.value}
-              </dd>
-            </div>
-          ))}
+          {highlight.map((entry) => {
+            const maroonStat = /^(duration|investment)$/i.test(entry.key.trim());
+            return (
+              <div key={entry.key} className="min-w-36 text-center text-[#8B7E2A]">
+                <dt className={maroonStat ? "type-h4 text-[40px] text-[#762323]" : "type-h4"}>{entry.key}</dt>
+                <dd className={`${maroonStat ? "font-serif text-[50px] font-semibold leading-tight tracking-[-0.01em]" : "type-h3"} mt-1`}>
+                  {entry.value}
+                </dd>
+              </div>
+            );
+          })}
         </dl>
       ) : null}
 
       {secondary.length ? (
-        <ul className="mx-auto mt-6 max-w-3xl space-y-1 font-serif text-[18px] font-medium leading-[1.2] tracking-[0.02em] text-[#762323] lg:text-[25px]">
+        <ul className="type-body-lg mx-auto mt-6 max-w-3xl space-y-1 text-[#762323]">
           {secondary.map((entry) => (
             <li key={entry.key}>
               {entry.key}: {entry.value}

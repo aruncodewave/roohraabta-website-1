@@ -15,11 +15,11 @@ import type { DropdownOption } from "@/lib/vfe/types";
 
 const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"), { ssr: false });
 
-const labelClass = "font-serif text-[24px] font-normal leading-snug text-[#8B7E2A] md:text-[32px]";
+const labelClass = "form-question text-[#8B7E2A]";
 
 export function FieldError({ message }: { message?: string }) {
   if (!message) return null;
-  return <p className="mt-2 font-sans text-sm text-[#9b2c2c]">{message}</p>;
+  return <p className="type-detail mt-2 text-[#9b2c2c]">{message}</p>;
 }
 
 export function UnderlineInput({
@@ -54,14 +54,14 @@ export function UnderlineInput({
   const floated = focused || filled;
 
   return (
-    <div className="relative min-w-0 pt-8 text-left">
+    <div className="relative min-w-0 pt-10 text-left">
       <input
         id={inputId}
         type={type}
         inputMode={inputMode}
         maxLength={maxLength}
         placeholder={type === "date" ? undefined : " "}
-        className={`block w-full border-0 border-b bg-transparent pb-2 font-serif text-[20px] text-[#762323] outline-none md:text-[22px] ${
+        className={`form-field block w-full border-0 border-b bg-transparent pb-2 text-[#762323] outline-none ${
           error ? "border-[#9b2c2c]" : "border-[#762323]"
         } ${type === "date" && !floated ? "text-transparent focus:text-[#762323]" : ""}`}
         {...registration}
@@ -89,8 +89,8 @@ export function UnderlineInput({
       />
       <label
         htmlFor={inputId}
-        className={`pointer-events-none absolute left-0 font-serif text-[#8B7E2A] transition-all duration-200 ${
-          floated ? "top-0 text-[16px]" : "top-8 text-[20px] md:text-[24px]"
+        className={`pointer-events-none absolute left-0 text-[#8B7E2A] transition-all duration-200 ${
+          floated ? "form-field-float top-0" : "form-field top-10"
         }`}
       >
         {label}
@@ -164,7 +164,7 @@ function BirthDateControl({
   const floated = open || Boolean(selected);
 
   return (
-    <div className={`relative pt-8 text-left ${open ? "z-30" : ""}`}>
+    <div className={`relative pt-10 text-left ${open ? "z-30" : ""}`}>
       <DatePicker
         selected={selected}
         onChange={(date: Date | null) => onChange(date ? toIsoDate(date) : "")}
@@ -181,13 +181,13 @@ function BirthDateControl({
         autoComplete="off"
         calendarClassName="lead-calendar"
         wrapperClassName="w-full"
-        className={`block w-full cursor-pointer border-0 border-b bg-transparent pb-2 font-serif text-[20px] text-[#762323] outline-none md:text-[22px] ${
+        className={`form-field block w-full cursor-pointer border-0 border-b bg-transparent pb-2 text-[#762323] outline-none ${
           error ? "border-[#9b2c2c]" : "border-[#762323]"
         }`}
       />
       <label
-        className={`pointer-events-none absolute left-0 font-serif text-[#8B7E2A] transition-all duration-200 ${
-          floated ? "top-0 text-[16px]" : "top-8 text-[20px] md:text-[24px]"
+        className={`pointer-events-none absolute left-0 text-[#8B7E2A] transition-all duration-200 ${
+          floated ? "form-field-float top-0" : "form-field top-10"
         }`}
       >
         {label}
@@ -205,6 +205,7 @@ export function UnderlineSelect({
   placeholder,
   error,
   hideMessage = false,
+  variant = "field",
 }: {
   label: string;
   value: string;
@@ -213,6 +214,7 @@ export function UnderlineSelect({
   placeholder: string;
   error?: string;
   hideMessage?: boolean;
+  variant?: "field" | "question";
 }) {
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
@@ -230,18 +232,18 @@ export function UnderlineSelect({
 
   return (
     <div ref={rootRef} className="relative min-w-0 text-left">
-      <p className="font-serif text-[20px] text-[#8B7E2A] md:text-[24px]">{label}</p>
+      <p className={`${variant === "question" ? "form-question" : "form-field"} text-[#8B7E2A]`}>{label}</p>
       <button
         type="button"
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-controls={listId}
         onClick={() => setOpen((current) => !current)}
-        className={`mt-1 flex w-full cursor-pointer items-center justify-between border-0 border-b bg-transparent pb-2 text-left font-serif text-[20px] outline-none md:text-[22px] ${
+        className={`mt-1 flex w-full cursor-pointer items-center justify-between border-0 border-b bg-transparent pb-2 text-left outline-none ${
           error ? "border-[#9b2c2c]" : "border-[#762323]"
         }`}
       >
-        <span className={`min-w-0 truncate ${selected ? "text-[#762323]" : "text-[#8B7E2A]/60"}`}>{selected?.label || placeholder}</span>
+        <span className={`min-w-0 truncate ${selected ? "form-field text-[#762323]" : "form-hint text-[#8B7E2A]/70"}`}>{selected?.label || placeholder}</span>
         <svg viewBox="0 0 20 20" aria-hidden="true" className={`h-5 w-5 shrink-0 text-[#762323] transition-transform ${open ? "rotate-180" : ""}`}>
           <path d="M5 7.5 10 12.5 15 7.5" fill="none" stroke="currentColor" strokeWidth="1.4" />
         </svg>
@@ -249,7 +251,7 @@ export function UnderlineSelect({
       {open ? (
         <div id={listId} role="listbox" className="absolute z-30 mt-1 max-h-64 w-full overflow-auto bg-cream shadow-lg">
           {options.length === 0 ? (
-            <p className="px-4 py-3 font-serif text-[18px] text-[#8B7E2A]">No matches</p>
+            <p className="form-hint px-4 py-3 text-[#8B7E2A]">No matches</p>
           ) : (
             options.map((option, index) => {
               const isSelected = option.value === value;
@@ -263,7 +265,7 @@ export function UnderlineSelect({
                     onChange(option.value);
                     setOpen(false);
                   }}
-                  className={`block w-full cursor-pointer px-4 py-3 text-left font-serif text-[18px] ${
+                  className={`form-field block w-full cursor-pointer px-4 py-3 text-left ${
                     isSelected ? "bg-[#8B7E2A] text-[#FFFDF7]" : "text-[#762323] hover:bg-[#8B7E2A]/15"
                   }`}
                 >
@@ -301,14 +303,10 @@ export function ChoiceField({
   align?: "center" | "start";
 }) {
   const start = align === "start";
-  const questionClass = compact
-    ? "font-serif text-[18px] font-normal leading-snug text-[#8B7E2A] md:text-[22px]"
-    : labelClass;
+  const questionClass = labelClass;
   const optionClass = start
-    ? "flex cursor-pointer items-center gap-3 font-serif text-[20px] text-[#8B7E2A] md:text-[24px]"
-    : compact
-      ? "flex cursor-pointer items-center gap-3 font-serif text-[18px] text-[#8B7E2A] md:text-[22px]"
-      : "flex cursor-pointer items-center gap-4 font-serif text-[24px] text-[#8B7E2A] md:text-[32px]";
+    ? "form-field flex cursor-pointer items-center gap-3 text-[#8B7E2A]"
+    : "form-field flex cursor-pointer items-center gap-4 text-[#8B7E2A]";
 
   return (
     <fieldset
@@ -395,7 +393,7 @@ export function AgreementCheckbox({
           }}
         />
         <GoldBox size="sm" className="mt-1" />
-        <span className="font-serif text-[18px] leading-snug text-[#8B7E2A] md:text-[22px]">{children}</span>
+        <span className="form-note text-[#8B7E2A]">{children}</span>
       </label>
       <FieldError message={error} />
     </div>
@@ -453,7 +451,7 @@ export function SubmitButton({ pending }: { pending: boolean }) {
       <button
         type="submit"
         disabled={pending}
-        className="inline-flex aspect-[619/265] w-[min(86vw,380px)] cursor-pointer items-center justify-center border-0 bg-transparent bg-[url('/images/buttonFrame2.svg')] bg-contain bg-center bg-no-repeat font-serif text-[34px] leading-none text-[#FFFDF7] transition-opacity hover:opacity-90 disabled:cursor-wait disabled:opacity-60 md:text-[44px]"
+        className="form-field inline-flex aspect-[619/265] w-[min(86vw,380px)] cursor-pointer items-center justify-center border-0 bg-transparent bg-[url('/images/buttonFrame2.svg')] bg-contain bg-center bg-no-repeat leading-none text-[#FFFDF7] transition-opacity hover:opacity-90 disabled:cursor-wait disabled:opacity-60"
       >
         {pending ? "..." : "Submit"}
       </button>

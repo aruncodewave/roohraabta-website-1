@@ -10,8 +10,8 @@ export default function PodcastsPage() {
   return (
     <section className="relative overflow-hidden bg-cream pb-28 pt-8 lg:pb-40">
       <header className="mx-auto mt-8 max-w-4xl px-5 text-center sm:mt-10 sm:px-8">
-        <h1 className="font-sans text-[65px] leading-[1.2] font-bold tracking-[-0.01em] text-[#762323]">Podcasts</h1>
-        <p className="mt-4 font-serif text-[30px] leading-[1.35] font-normal tracking-[-0.02em] text-[#8B7E2A]">
+        <h1 className="type-h1 text-[#762323]">Podcasts</h1>
+        <p className="type-body-lg mt-4 text-[#8B7E2A]">
           Conversations that explore love, relationships, and the stories that connect us.
         </p>
       </header>

@@ -15,8 +15,7 @@ type TestimonialSectionProps = {
   creditSizeClass?: string;
 };
 
-const titleClass =
-  "text-center font-serif font-normal italic leading-[1.25] tracking-[-0.02em]";
+const titleClass = "type-h3 text-center italic";
 
 function quoteFill(color: string) {
   const hex = color.replace("#", "");
@@ -38,9 +37,9 @@ export default function TestimonialSection({
   iconColor = "#8B7E2A1A",
   credit = "Physician, Medical Resident | Boston | 27",
   bodyAlign = "center",
-  titleSizeClass = "text-[32px] sm:text-[40px] lg:text-[50px]",
-  bodySizeClass = "text-[18px] sm:text-[20px] lg:text-[24px]",
-  creditSizeClass = "text-[20px] sm:text-[24px] lg:text-[30px]",
+  titleSizeClass = "type-h3",
+  bodySizeClass = "type-body-lg",
+  creditSizeClass = "type-footer",
 }: TestimonialSectionProps) {
   const clipId = useId().replaceAll(":", "");
   const { fill, opacity } = quoteFill(iconColor);
@@ -143,7 +142,7 @@ export default function TestimonialSection({
             {title}
           </h2>
           <div
-            className={`mt-8 space-y-6 font-sans font-bold leading-[1.6] tracking-normal ${bodySizeClass} ${bodyAlign === "left" ? "text-left" : "text-center"}`}
+            className={`mt-8 space-y-6 ${bodySizeClass} ${bodyAlign === "left" ? "text-left" : "text-center"}`}
             style={{ color: textColor }}
           >
             {typeof paragraph === "string"
@@ -156,7 +155,7 @@ export default function TestimonialSection({
           </div>
           {credit ? (
             <p
-              className={`mt-8 text-center font-sans font-semibold leading-[1.25] tracking-[-0.02em] ${creditSizeClass}`}
+              className={`mt-8 text-center ${creditSizeClass}`}
               style={{ color: textColor }}
             >
               {credit}

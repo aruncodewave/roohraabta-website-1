@@ -13,7 +13,7 @@ export function PackageSpinner() {
 export function PackageMessage({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-[50vh] items-center justify-center bg-cream px-5 py-24 text-center">
-      <div className="max-w-3xl font-serif text-[22px] leading-relaxed text-[#762323] md:text-[28px]">{children}</div>
+      <div className="type-body-lg max-w-3xl text-[#762323]">{children}</div>
     </div>
   );
 }
@@ -32,7 +32,7 @@ export function PackageAction({
       type="button"
       onClick={onClick}
       disabled={disabled}
-      className="inline-flex aspect-[619/265] w-[min(88vw,420px)] cursor-pointer items-center justify-center border-0 bg-transparent bg-[url('/images/buttonFrame2.svg')] bg-contain bg-center bg-no-repeat px-[16%] text-center font-serif text-[22px] leading-tight text-[#FFFDF7] transition-opacity hover:opacity-90 disabled:cursor-wait disabled:opacity-60 md:text-[28px]"
+      className="type-footer inline-flex aspect-[619/265] w-[min(88vw,420px)] cursor-pointer items-center justify-center border-0 bg-transparent bg-[url('/images/buttonFrame2.svg')] bg-contain bg-center bg-no-repeat px-[16%] text-center leading-tight text-[#FFFDF7] transition-opacity hover:opacity-90 disabled:cursor-wait disabled:opacity-60"
     >
       {children}
     </button>
@@ -41,7 +41,7 @@ export function PackageAction({
 
 export function PackageHeading() {
   return (
-    <h1 className="text-center font-serif text-[34px] font-normal uppercase tracking-wide text-[#762323] md:text-[48px]">
+    <h1 className="type-h3 text-center uppercase tracking-wide text-[#762323]">
       Packages
     </h1>
   );

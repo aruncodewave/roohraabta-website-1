@@ -87,8 +87,8 @@ export default function ExploratoryThankYou() {
   return (
     <section className="bg-cream px-5 py-16 text-center sm:px-8">
       <div className="mx-auto max-w-2xl">
-        <h1 className="font-serif text-[36px] text-[#762323] md:text-[46px]">Thank you for your interest</h1>
-        <p className="mt-4 font-sans text-[22px] leading-relaxed text-[#8B7E2A] md:text-[28px]">
+        <h1 className="type-h3 text-[#762323]">Thank you for your interest</h1>
+        <p className="type-body-lg mt-4 text-[#8B7E2A]">
           {!loading && !failed && !calendlyUrl
             ? "Your information has been submitted. We will contact you soon."
             : "Your information has been submitted. Choose a time for your exploratory call, or ask us to reach out."}
@@ -96,11 +96,11 @@ export default function ExploratoryThankYou() {
 
         <div className="mt-10">
           {loading ? (
-            <p className="font-sans text-[18px] text-[#8B7E2A]">Loading available times...</p>
+            <p className="type-body-sm text-[#8B7E2A]">Loading available times...</p>
           ) : calendlyUrl ? (
             <a
               href={calendlyUrl}
-              className="inline-flex aspect-[811/329] w-[min(86vw,420px)] items-center justify-center bg-[url('/images/buttonFrame.svg')] bg-contain bg-center bg-no-repeat font-serif text-[28px] text-[#79211E] md:text-[34px]"
+              className="type-h4 inline-flex aspect-[811/329] w-[min(86vw,420px)] items-center justify-center bg-[url('/images/buttonFrame.svg')] bg-contain bg-center bg-no-repeat leading-none text-[#79211E]"
             >
               Schedule a Call
             </a>
@@ -108,27 +108,27 @@ export default function ExploratoryThankYou() {
             <button
               type="button"
               onClick={() => router.push("/contact?path=exploratory")}
-              className="cursor-pointer border border-[#762323] px-6 py-3 font-sans text-[18px] text-[#762323]"
+              className="type-body-sm cursor-pointer border border-[#762323] px-6 py-3 text-[#762323]"
             >
               Return to the form
             </button>
           ) : null}
           {failed && !loading && !calendlyUrl ? (
-            <p className="mt-4 font-sans text-[16px] text-[#762323]">
+            <p className="type-detail mt-4 text-[#762323]">
               We could not load the scheduling link. You can still ask us to follow up below.
             </p>
           ) : null}
         </div>
 
         <div className="mx-auto mt-12 max-w-md border-t border-[#762323] pt-8">
-          <h2 className="font-serif text-[26px] text-[#762323]">Not ready to schedule a time yet?</h2>
-          <p className="mt-3 font-sans text-[20px] text-[#8B7E2A] md:text-[24px]">
+          <h2 className="type-footer text-[#762323]">Not ready to schedule a time yet?</h2>
+          <p className="type-body-lg mt-3 text-[#8B7E2A]">
             Leave it with us and we will reach out within the next 48 hours.
           </p>
           <button
             type="button"
             onClick={finishLater}
-            className="mt-6 cursor-pointer border border-[#A4911B] px-8 py-3 font-sans text-[18px] text-[#8B7E2A]"
+            className="type-body-sm mt-6 cursor-pointer border border-[#A4911B] px-8 py-3 text-[#8B7E2A]"
           >
             Submit
           </button>

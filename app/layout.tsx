@@ -16,6 +16,7 @@ const newsreader = Newsreader({
 const lora = Lora({
   variable: "--font-family-lora",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
 });
 

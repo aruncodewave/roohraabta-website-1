@@ -261,7 +261,7 @@ export default function PodcastShow({ initial, unavailable = false }: { initial:
         </div>
 
         <div className="relative z-10 px-5 sm:px-8 lg:pr-12 lg:pl-[420px]">
-          <h2 className="text-center font-sans text-[clamp(44px,7vw,96px)] leading-[1.2] font-bold tracking-[-0.03em] text-[#762323] xl:text-[80px]">
+          <h2 className="type-hero text-center text-[70px] text-[#762323]">
             {show.title}
           </h2>
           {show.seasons.length > 0 ? (
@@ -273,7 +273,7 @@ export default function PodcastShow({ initial, unavailable = false }: { initial:
                     key={item.id}
                     type="button"
                     onClick={() => setSeasonId(item.id)}
-                    className={`cursor-pointer pb-1 font-newsreader text-[25px] leading-[1.15] font-semibold tracking-[-0.01em] text-[#762323] ${
+                    className={`type-body cursor-pointer pb-1 text-[#762323] ${
                       active ? "border-b-2 border-[#A4911B]" : ""
                     }`}
                   >
@@ -285,13 +285,13 @@ export default function PodcastShow({ initial, unavailable = false }: { initial:
           ) : null}
 
           {season?.description ? (
-            <p className="mt-6 max-w-[980px] font-serif text-[23px] leading-[1.55] font-normal tracking-[-0.01em] text-[#762323]">
+            <p className="type-body-lg mt-6 max-w-[980px] text-[24px] text-[#762323]">
               {shortDescription(season.description)}
             </p>
           ) : null}
 
           {failed && show.seasons.length === 0 ? (
-            <p className="mt-8 font-serif text-[18px] text-[#762323]">Podcasts are unavailable right now.</p>
+            <p className="type-body-sm mt-8 text-[#762323]">Podcasts are unavailable right now.</p>
           ) : null}
 
           {season && season.episodes.length > 0 ? (
@@ -308,14 +308,14 @@ export default function PodcastShow({ initial, unavailable = false }: { initial:
                     aria-pressed={active}
                     className="grid h-[76px] w-full cursor-pointer grid-cols-[26px_36px_minmax(0,1fr)_auto] items-center gap-x-1.5 text-left sm:h-[100px] sm:grid-cols-[44px_60px_minmax(0,1fr)_auto] sm:gap-x-4"
                   >
-                    <span className="font-newsreader text-[13px] leading-[1.15] font-semibold tracking-[-0.01em] text-[#762323] sm:text-[20px]">
+                    <span className="type-label text-[#762323]">
                       {String(episode.number).padStart(2, "0")}
                     </span>
                     <img src="/images/podcastImage2.png" alt="" className="h-9 w-9 rounded-[6px] object-cover sm:h-14 sm:w-14" />
-                    <span className={`truncate pr-2 font-newsreader text-[15px] leading-[1.15] font-semibold tracking-[-0.01em] underline decoration-1 underline-offset-[3px] sm:pr-8 sm:text-[25px] ${tone}`}>
+                    <span className={`type-body truncate pr-2 underline decoration-1 underline-offset-[3px] sm:pr-8 ${tone}`}>
                       {episode.title}
                     </span>
-                    <span className="pl-1 text-right font-newsreader text-[13px] leading-[1.15] font-semibold tracking-[-0.01em] text-[#762323] sm:pl-4 sm:pr-2 sm:text-[20px]">
+                    <span className="type-label pl-1 text-right text-[#762323] sm:pl-4 sm:pr-2">
                       {episodeMark(episode.duration)}
                     </span>
                   </button>
@@ -345,7 +345,7 @@ export default function PodcastShow({ initial, unavailable = false }: { initial:
           >
             <div className="min-w-0 flex-1">
               {infoOpen && season?.description ? (
-                <p className="mx-auto mb-2 line-clamp-2 max-w-xl text-center font-serif text-[13px] leading-snug text-[#762323]">
+                <p className="type-caption mx-auto mb-2 line-clamp-2 max-w-xl text-center text-[#762323]">
                   {shortDescription(season.description)}
                 </p>
               ) : null}
@@ -358,23 +358,23 @@ export default function PodcastShow({ initial, unavailable = false }: { initial:
                     setRate(next);
                     if (audioRef.current) audioRef.current.playbackRate = next;
                   }}
-                  className="shrink-0 cursor-pointer font-serif text-[14px] leading-none text-[#762323] sm:text-[18px]"
+                  className="type-body-sm shrink-0 cursor-pointer leading-none text-[#762323]"
                   aria-label={`Playback speed ${rate} times`}
                 >
                   {rate} x
                 </button>
                 <button type="button" onClick={() => seekBy(-15)} aria-label="Rewind 15 seconds" className="relative h-6 w-[22px] shrink-0 cursor-pointer sm:h-8 sm:w-[29px]">
                   <img src="/icons/replay1.svg" alt="" className="h-full w-full" />
-                  <span className="pointer-events-none absolute top-[54%] left-1/2 -translate-x-1/2 -translate-y-1/2 font-newsreader text-[10px] leading-none font-semibold text-[#79211E]">15</span>
+                  <span className="type-caption pointer-events-none absolute top-[54%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-[10px] leading-none text-[#79211E]">15</span>
                 </button>
                 <button type="button" onClick={() => seekBy(30)} aria-label="Forward 30 seconds" className="relative h-6 w-[22px] shrink-0 cursor-pointer sm:h-8 sm:w-[29px]">
                   <img src="/icons/replay2.svg" alt="" className="h-full w-full" />
-                  <span className="pointer-events-none absolute top-[54%] left-1/2 -translate-x-1/2 -translate-y-1/2 font-newsreader text-[10px] leading-none font-semibold text-[#79211E]">30</span>
+                  <span className="type-caption pointer-events-none absolute top-[54%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-[10px] leading-none text-[#79211E]">30</span>
                 </button>
                 </div>
                 <div className="col-span-3 row-start-2 flex min-w-0 justify-center sm:col-span-1 sm:col-start-2 sm:row-start-1 sm:px-8 lg:px-14">
                   <div className="relative w-full max-w-[715px]">
-                    <p className="absolute bottom-full left-0 mb-1.5 max-w-full truncate font-serif text-[14px] leading-none text-[#A4911B] sm:mb-2 sm:text-[16px] lg:text-[18px]">
+                    <p className="type-body-sm absolute bottom-full left-0 mb-1.5 max-w-full truncate leading-none text-[#A4911B] sm:mb-2">
                       {current?.title ?? "Select an episode"}
                     </p>
                     <input
@@ -393,7 +393,7 @@ export default function PodcastShow({ initial, unavailable = false }: { initial:
                       style={{ ["--seek" as string]: `${duration ? (Math.min(progress, duration) / duration) * 100 : 0}%` }}
                       className="podcast-seek h-[5.33px] w-full cursor-pointer"
                     />
-                    <div className="absolute inset-x-0 top-full mt-2 flex justify-between font-newsreader text-[12px] leading-none font-semibold text-black">
+                    <div className="type-caption absolute inset-x-0 top-full mt-2 flex justify-between leading-none text-black">
                       <span>{playerTime(progress)}</span>
                       <span>{playerTime(duration)}</span>
                     </div>

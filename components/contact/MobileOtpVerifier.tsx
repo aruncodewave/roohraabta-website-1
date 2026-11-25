@@ -129,16 +129,16 @@ export default function MobileOtpVerifier({
   return (
     <div className="text-left">
       {isVerified ? (
-        <p className="font-serif text-[18px] text-[#3d6b45] md:text-[20px]">Mobile number verified</p>
+        <p className="form-field text-[#3d6b45]">Mobile number verified</p>
       ) : (
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <p className="font-serif text-[18px] text-[#8B7E2A] md:text-[20px]">Verify mobile number with OTP*</p>
+          <p className="form-field text-[#8B7E2A]">Verify mobile number with OTP*</p>
           {!showOtp ? (
             <button
               type="button"
               onClick={handleSend}
               disabled={!canSend || isSending}
-              className="cursor-pointer rounded-md bg-[#A4911B] px-4 py-2 font-serif text-sm text-[#FFFAEF] hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+              className="form-field cursor-pointer rounded-md bg-[#A4911B] px-4 py-2 text-[#FFFAEF] hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
             >
               {isSending ? "Sending..." : "Send OTP"}
             </button>
@@ -198,7 +198,7 @@ function OtpBoxes({
 
   return (
     <div className="mt-4 flex flex-col items-center gap-4">
-      <p className="w-full text-left font-serif text-[16px] text-[#8B7E2A]">
+      <p className="form-note w-full text-left text-[#8B7E2A]">
         Enter the 6-digit OTP sent to <strong className="text-[#762323]">{phone}</strong>
       </p>
       <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
@@ -249,26 +249,26 @@ function OtpBoxes({
               next[index] = value;
               write(next, index < length - 1 ? index + 1 : index, next.every(Boolean));
             }}
-            className={`h-10 w-10 rounded-lg border-2 bg-[#FFFDF7] text-center font-serif text-[20px] font-semibold text-[#762323] outline-none transition disabled:opacity-60 ${
+            className={`form-field h-14 w-12 rounded-lg border-2 bg-[#FFFDF7] text-center text-[#762323] outline-none transition disabled:opacity-60 ${
               error ? "border-[#9b2c2c] bg-[#fff6f4]" : "border-[#762323] focus:scale-105 focus:shadow-[0_0_0_3px_rgba(118,35,35,0.12)]"
             }`}
           />
         ))}
       </div>
-      {error ? <p className="text-center font-sans text-sm text-[#9b2c2c]">{error}</p> : null}
+      {error ? <p className="type-detail text-center text-[#9b2c2c]">{error}</p> : null}
       <button
         type="button"
         onClick={() => onVerify(digits.join(""))}
         disabled={isVerifying || digits.join("").length !== length}
-        className="min-w-[120px] cursor-pointer rounded-md bg-[#A4911B] px-6 py-3 font-serif text-[16px] font-semibold text-[#FFFAEF] hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+        className="form-field min-w-[120px] cursor-pointer rounded-md bg-[#A4911B] px-6 py-3 text-[#FFFAEF] hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {isVerifying ? "Verifying..." : "Verify OTP"}
       </button>
       <div>
         {countdown > 0 ? (
-          <span className="font-sans text-sm text-[#8B7E2A]">Resend OTP in {countdown} sec</span>
+          <span className="form-note text-[#8B7E2A]">Resend OTP in {countdown} sec</span>
         ) : (
-          <button type="button" onClick={onResend} className="cursor-pointer font-sans text-sm text-[#762323] underline">
+          <button type="button" onClick={onResend} className="form-note cursor-pointer text-[#762323] underline">
             Resend OTP
           </button>
         )}

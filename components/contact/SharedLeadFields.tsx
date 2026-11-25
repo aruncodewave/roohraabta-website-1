@@ -157,6 +157,7 @@ export function ClosingFields({
   return (
     <>
       <UnderlineSelect
+        variant="question"
         label="How did you hear about us?*"
         value={hearAboutUs}
         placeholder="Select"

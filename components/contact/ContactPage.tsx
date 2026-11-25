@@ -101,10 +101,10 @@ export default function ContactPage() {
   return (
     <section className="bg-cream py-16 text-center sm:py-20">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <h1 className="font-serif text-[42px] font-normal leading-tight text-[#8B7E2A] sm:text-[56px] lg:text-[64px]">
+        <h1 className="type-h1 text-[#8B7E2A]">
           Begin the Conversation
         </h1>
-        <p className="mx-auto mt-5 max-w-4xl font-serif text-[20px] leading-snug text-[#8B7E2A] md:text-[28px]">
+        <p className="form-intro mx-auto mt-5 max-w-4xl text-[#8B7E2A]">
           Connect with our team to explore, or proceed directly with your membership application.
         </p>
       </div>
@@ -123,7 +123,7 @@ export default function ContactPage() {
 
       <div className="mx-auto mt-16 max-w-6xl px-5 text-left sm:px-8">
           {loading ? (
-            <p className="text-center font-sans text-[18px] text-[#8B7E2A]">Loading the form...</p>
+            <p className="type-body-sm text-center text-[#8B7E2A]">Loading the form...</p>
           ) : activePath === "exploratory" ? (
             <ExploratoryForm countryCodes={countryCodes} dropdowns={dropdowns} />
           ) : (
@@ -135,19 +135,19 @@ export default function ContactPage() {
         <ul className="mx-auto flex max-w-3xl flex-col items-center gap-12 sm:flex-row sm:items-start sm:justify-center sm:gap-20">
           {offices.map((office) => (
             <li key={office.city} className="w-full max-w-xs sm:flex-1">
-              <h3 className="font-infant text-[28px] font-bold leading-none text-[#762323] sm:text-[34px]">
+              <h3 className="type-h4 text-[#762323]">
                 {office.city}
               </h3>
               {office.phone ? (
                 <a
                   href={office.tel}
-                  className="mt-4 inline-block font-serif text-[18px] leading-none text-[#8B7E2A] underline underline-offset-4 hover:opacity-70 sm:text-[20px]"
+                  className="type-label mt-4 inline-block leading-none text-[#8B7E2A] underline underline-offset-4 hover:opacity-70"
                 >
                   {office.phone}
                 </a>
               ) : null}
               {office.address ? (
-                <p className="mx-auto mt-4 max-w-xs font-serif text-[16px] leading-[1.5] text-[#762323] sm:text-[18px]">
+                <p className="type-body-sm mx-auto mt-4 max-w-xs text-[#762323]">
                   {office.address}
                 </p>
               ) : null}
@@ -172,7 +172,7 @@ function PathButton({
     <button
       type="button"
       onClick={onClick}
-      className={`relative z-10 inline-flex min-h-16 min-w-0 flex-1 cursor-pointer items-center justify-center px-2 py-3 text-center font-serif text-[15px] leading-snug min-[420px]:px-3 min-[420px]:text-[18px] md:min-h-20 md:px-6 md:text-[26px] lg:min-h-[88px] lg:min-w-[280px] lg:flex-none lg:px-10 lg:text-[32px] lg:leading-none ${
+      className={`type-footer relative z-10 inline-flex min-h-16 min-w-0 flex-1 cursor-pointer items-center justify-center px-2 py-3 text-center min-[420px]:px-3 md:min-h-20 md:px-6 lg:min-h-[88px] lg:min-w-[280px] lg:flex-none lg:px-10 ${
         active
           ? "bg-[#A4911B] text-[#FFFDF7]"
           : "border border-[#A4911B] bg-cream text-[#8B7E2A]"

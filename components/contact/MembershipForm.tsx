@@ -106,7 +106,7 @@ export default function MembershipForm({ countryCodes, dropdowns }: MembershipFo
       className="mx-auto flex max-w-4xl flex-col gap-12"
       noValidate
     >
-      <h2 className="text-center font-serif text-[34px] font-normal text-[#762323] md:text-[48px]">
+      <h2 className="form-section text-center text-[#762323]">
         <span className="inline-block border-b border-[#762323] pb-2">Membership Application</span>
       </h2>
       <NameFields register={register} setValue={setValue} errors={errors} />
@@ -138,6 +138,7 @@ export default function MembershipForm({ countryCodes, dropdowns }: MembershipFo
         otpType="apply_for_membership"
       />
       <UnderlineSelect
+        variant="question"
         label="What best describes your current relationship status?*"
         value={relationShipStatus}
         placeholder="Select"
@@ -152,6 +153,7 @@ export default function MembershipForm({ countryCodes, dropdowns }: MembershipFo
         }}
       />
       <UnderlineSelect
+        variant="question"
         label="Do you have children?*"
         value={haveChildren}
         placeholder="Select"

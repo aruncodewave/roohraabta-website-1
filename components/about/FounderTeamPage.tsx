@@ -1,13 +1,12 @@
-const letter =
-  "mx-auto max-w-4xl text-center font-serif text-[18px] font-normal leading-[1.5] tracking-normal text-[#762323] sm:text-[22px] lg:text-[25px]";
+const letter = "type-body-lg mx-auto max-w-4xl text-center text-[#762323]";
 
 export default function FounderTeamPage() {
   return (
     <section className="bg-cream px-5 py-14 text-center sm:px-8 sm:py-20">
-      <h1 className="font-sans text-[32px] font-semibold italic leading-[1.1] tracking-[-0.02em] text-[#8B7E2A] sm:text-[44px] lg:text-[60px]">
+      <h1 className="type-h2 italic text-[#8B7E2A]">
         A Note from Our Founder
       </h1>
-      <p className="mt-4 font-sans text-[28px] font-bold leading-[1.2] tracking-[-0.01em] text-[#762323] sm:mt-6 sm:text-[40px] lg:text-[52px]">
+      <p className="type-h3 mt-4 text-[#762323] sm:mt-6">
         Anuradda Gupta
       </p>
 
@@ -56,11 +55,11 @@ export default function FounderTeamPage() {
         <p>To find your person. The one who feels like home.</p>
       </div>
 
-      <p className="mt-8 font-serif text-[18px] font-normal italic text-[#8B7E2A] sm:text-[20px]">
+      <p className="type-label mt-8 italic text-[#8B7E2A]">
         Warmly,
       </p>
       <p className="mt-2 font-sacramento text-[48px] leading-none text-[#79211E] sm:text-[56px]">Anuradda Gupta</p>
-      <p className="mt-2 font-serif text-[18px] font-normal italic text-[#8B7E2A] sm:text-[20px]">
+      <p className="type-label mt-2 italic text-[#8B7E2A]">
         Founder
       </p>
     </section>
